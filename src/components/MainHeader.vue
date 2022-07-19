@@ -1,5 +1,9 @@
 <template>
-  <div></div>
+   <header>
+      <div class="logo-container">
+         <img src="../assets/img/logo.png" alt="spotify-logo">
+      </div>
+   </header>
 </template>
 
 <script>
