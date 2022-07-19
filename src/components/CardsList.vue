@@ -1,17 +1,23 @@
 <template>
    <div class="card-wrapper">
-      <ArtistCard />
+      <div class="card" v-for="(artist, index) in artistCard" :key="index">
+         <div class="card-content">
+            <div class="card-img">
+               <img :src="artist.poster" :alt="artist.author">
+            </div>
+            <div class="card-caption">
+               <h4>{{ artist.title }}</h4>
+               <p>{{ artist.author }}</p>
+            </div>
+         </div>
+      </div>
    </div>
 </template>
 
 <script>
-import ArtistCard from './ArtistCard.vue';
 import axios from 'axios';
 
 export default {
-   components: { 
-      ArtistCard,
-   },
    data: function() {
       return {
          artistCard: []
@@ -21,7 +27,8 @@ export default {
       getArtistCard() {
          axios.get('https://flynn.boolean.careers/exercises/api/array/music')
          .then((result) => {
-            console.log(result.data.response);
+            this.artistCard = result.data.response; 
+            console.log(this.artistCard);
          });
       }
    },
@@ -38,6 +45,33 @@ export default {
       flex-wrap: wrap;
       width: 70%;
       margin: 0 auto;
+
+      .card {
+      width: calc(100% / 5);
+      padding: 0.5rem 1rem;
+
+         .card-content {
+            background-color: rgba(255,255,255,.05);
+            padding: 1rem;
+            color: #fff
+         }
+
+         img {
+            width: 100%;
+         }
+
+         .card-caption {
+            padding: .5rem 0;
+
+            h4 {
+               text-transform: uppercase;
+            }
+
+            p {
+               color: rgba(255,255,255,.5);
+            }
+         }
+      }
    }
 
 </style>
