@@ -8,6 +8,7 @@
             <div class="card-caption">
                <h4>{{ artist.title }}</h4>
                <p>{{ artist.author }}</p>
+               <p>{{ artist.year }}</p>
             </div>
          </div>
       </div>
@@ -49,11 +50,13 @@ export default {
       .card {
       width: calc(100% / 5);
       padding: 0.5rem 1rem;
+      height: 300px;
 
          .card-content {
             background-color: rgba(255,255,255,.05);
             padding: 1rem;
-            color: #fff
+            color: #fff;
+            height: 100%;
          }
 
          img {
@@ -65,10 +68,11 @@ export default {
 
             h4 {
                text-transform: uppercase;
+               margin-bottom: .75rem;
             }
 
             p {
-               color: rgba(255,255,255,.5);
+               color: rgba(255,255,255,.3);
             }
          }
       }
