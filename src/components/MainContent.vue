@@ -1,8 +1,6 @@
 <template>
    <main>
-      <div class="wrapper">
-         <CardsList />
-      </div>
+      <CardsList />
    </main>
 </template>
 
@@ -20,12 +18,5 @@ export default {
    main {
       height: calc(100% - 52px);
       padding: 4rem;
-
-      .wrapper {
-         display: flex;
-         flex-wrap: wrap;
-         width: 70%;
-         margin: 0 auto;
-      }
    }
 </style>
