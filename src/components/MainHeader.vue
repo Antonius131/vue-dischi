@@ -12,6 +12,14 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+   header {
+      background-color: #2E3A46;
+      padding: .5rem 1rem;
+      text-align: left;
 
+      img {
+         height: 30px;
+      }
+   }
 </style>
