@@ -1,7 +1,8 @@
 <template>
    <main>
       <div class="wrapper">
-         <div class="card">
+         <CardsList />
+         <!-- <div class="card">
             <div class="card-content">
                <div class="card-img">
                   <img src="https://cloud.rtl.it/RTLFM/News/Article/600x600/buon-compleanno-freddie-mercury-avrebbe-75-anni-quel-giorno-al-live-aid-in-cui-fu-incoronato-re-square-site-tv25s.jpg" alt="freddie">
@@ -11,14 +12,18 @@
                   <p>Subtitle</p>
                </div>
             </div>
-         </div>
+         </div> -->
       </div>
    </main>
 </template>
 
 <script>
-export default {
+import CardsList from './CardsList.vue'
 
+export default {
+   components: {
+      CardsList,
+   }
 }
 </script>
 
