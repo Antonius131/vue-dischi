@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <main>
+
+  </main>
 </template>
 
 <script>
@@ -8,6 +10,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+   main {
+      height: calc(100% - 52px);
+   }
 </style>
