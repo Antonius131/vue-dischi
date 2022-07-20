@@ -1,6 +1,12 @@
 <template>
    <div class="card-wrapper">
-      <ArtistCard />
+      <ArtistCard v-for="(artist, index) in artistsList" :key="index"
+         :title = "artist.title"
+         :author = "artist.author"
+         :poster = "artist.poster"
+         :genre = "artist.genre"
+         :year = "artist.year"
+      />
    </div>
 </template>
 
@@ -11,15 +17,15 @@ import ArtistCard from './ArtistCard.vue';
 export default {
    data: function () {
       return {
-         artistCard: []
+         artistsList: []
       };
    },
    methods: {
       getArtistCard() {
          axios.get("https://flynn.boolean.careers/exercises/api/array/music")
                .then((result) => {
-               this.artistCard = result.data.response;
-               console.log(this.artistCard);
+               this.artistsList = result.data.response;
+               console.log(this.artistsList);
          });
       }
    },
