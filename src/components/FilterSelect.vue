@@ -2,9 +2,12 @@
    <div id="cards-filter">
       <select v-model="selectedValue">
          <option></option>
-         <option>Genre</option>
-         <option>Artist</option>
+         <option>Rock</option>
+         <option>Pop</option>
+         <option>Jazz</option>
+         <option>Metal</option>
       </select>
+      <span>{{selectedValue}}</span>
    </div>
 </template>
 
