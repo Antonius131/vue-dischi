@@ -1,13 +1,12 @@
 <template>
    <div id="cards-filter">
-      <select v-model="selectedValue">
+      <select v-model="selectedValue" @click="$emit('filter', selectedValue)">
          <option></option>
          <option>Rock</option>
          <option>Pop</option>
          <option>Jazz</option>
          <option>Metal</option>
       </select>
-      <span>{{selectedValue}}</span>
    </div>
 </template>
 

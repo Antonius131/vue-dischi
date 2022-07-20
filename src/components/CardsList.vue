@@ -1,6 +1,6 @@
 <template>
    <div class="card-wrapper">
-      <FilterSelect />
+      <FilterSelect @filter="cardsFilter"/>
       <ArtistCard v-for="(artist, index) in artistsList" :key="index"
          :title = "artist.title"
          :author = "artist.author"
@@ -28,6 +28,10 @@ export default {
                .then((result) => {
                this.artistsList = result.data.response;
          });
+      },
+
+      cardsFilter(niddle) {
+         console.warn(niddle);
       }
    },
    created() {
