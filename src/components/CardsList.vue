@@ -1,7 +1,7 @@
 <template>
    <div class="card-wrapper">
       <FilterSelect @filter="cardsFilter"/>
-      <ArtistCard v-for="(artist, index) in artistsList" :key="index"
+      <ArtistCard v-for="(artist, index) in filteredArtists" :key="index"
          :title = "artist.title"
          :author = "artist.author"
          :poster = "artist.poster"
@@ -28,6 +28,7 @@ export default {
          axios.get("https://flynn.boolean.careers/exercises/api/array/music")
                .then((result) => {
                this.artistsList = result.data.response;
+               this.filteredArtists = this.artistsList;
          });
       },
 
