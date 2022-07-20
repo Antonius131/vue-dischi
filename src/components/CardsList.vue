@@ -19,7 +19,7 @@ import FilterSelect from './FilterSelect.vue';
 export default {
    data: function () {
       return {
-         artistsList: []
+         artistsList: [],
       };
    },
    methods: {
@@ -30,8 +30,11 @@ export default {
          });
       },
 
-      cardsFilter(niddle) {
-         console.warn(niddle);
+      cardsFilter(needle) {
+         console.warn(needle);
+         const genreFilter = this.artistsList.filter((artist) => artist.genre.includes(needle));
+
+         console.log(genreFilter);
       }
    },
    created() {
