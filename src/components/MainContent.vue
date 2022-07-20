@@ -18,5 +18,6 @@ export default {
    main {
       height: calc(100% - 52px);
       padding: 4rem;
+      overflow: auto;
    }
 </style>

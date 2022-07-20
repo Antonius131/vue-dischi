@@ -1,5 +1,6 @@
 <template>
    <div class="card-wrapper">
+      <FilterSelect />
       <ArtistCard v-for="(artist, index) in artistsList" :key="index"
          :title = "artist.title"
          :author = "artist.author"
@@ -13,6 +14,7 @@
 <script>
 import axios from 'axios';
 import ArtistCard from './ArtistCard.vue';
+import FilterSelect from './FilterSelect.vue';
 
 export default {
    data: function () {
@@ -25,15 +27,15 @@ export default {
          axios.get("https://flynn.boolean.careers/exercises/api/array/music")
                .then((result) => {
                this.artistsList = result.data.response;
-               console.log(this.artistsList);
          });
       }
    },
    created() {
       this.getArtistCard();
    },
-   components: { 
-   ArtistCard 
+   components: {
+    ArtistCard,
+    FilterSelect
    }
 }
 </script>
