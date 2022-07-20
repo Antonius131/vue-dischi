@@ -20,6 +20,7 @@ export default {
    data: function () {
       return {
          artistsList: [],
+         filteredArtists: []
       };
    },
    methods: {
@@ -33,8 +34,8 @@ export default {
       cardsFilter(needle) {
          console.warn(needle);
          const genreFilter = this.artistsList.filter((artist) => artist.genre.includes(needle));
-
-         console.log(genreFilter);
+         this.filteredArtists = genreFilter;
+         console.log(this.filteredArtists);
       }
    },
    created() {
