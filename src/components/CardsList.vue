@@ -1,15 +1,13 @@
 <template>
    <div class="card-wrapper">
       <div class="card" v-for="(artist, index) in artistCard" :key="index">
-         <div class="card-content">
-            <div class="card-img">
-               <img :src="artist.poster" :alt="artist.author">
-            </div>
-            <div class="card-caption">
-               <h4>{{ artist.title }}</h4>
-               <p>{{ artist.author }}</p>
-               <p>{{ artist.year }}</p>
-            </div>
+         <div class="card-img">
+            <img :src="artist.poster" :alt="artist.author">
+         </div>
+         <div class="card-caption">
+            <h4>{{ artist.title }}</h4>
+            <p>{{ artist.author }}</p>
+            <p>{{ artist.year }}</p>
          </div>
       </div>
    </div>
@@ -49,15 +47,10 @@ export default {
 
       .card {
       width: calc(100% / 5);
-      padding: 0.5rem 1rem;
       height: 300px;
-
-         .card-content {
-            background-color: rgba(255,255,255,.05);
-            padding: 1rem;
-            color: #fff;
-            height: 100%;
-         }
+      background-color: rgba(255,255,255,.05);
+      padding: 1rem;
+      color: #fff;
 
          img {
             width: 100%;
