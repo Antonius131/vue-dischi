@@ -33,10 +33,8 @@ export default {
       },
 
       cardsFilter(needle) {
-         console.warn(needle);
          const genreFilter = this.artistsList.filter((artist) => artist.genre.includes(needle));
          this.filteredArtists = genreFilter;
-         console.log(this.filteredArtists);
       }
    },
    created() {
